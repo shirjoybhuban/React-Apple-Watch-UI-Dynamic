@@ -50,7 +50,9 @@ const RightWatch = ({ watch }) => {
                 watch.response.slice(0, 3).map((watch) => (
                   <Box>
                     <Center mb={3} mr={5}>
-                      <Img src="/betanic/5.png" />
+                      <Img
+                        src={`http://127.0.0.1:8000/${watch.thumbnail_img}`}
+                      />
                     </Center>
                     <Text fontSize="21px" fontWeight="600" color="#000000">
                       {watch.name}
