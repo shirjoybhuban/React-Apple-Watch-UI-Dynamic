@@ -12,10 +12,12 @@ import {
   Td,
   Tr,
   Text,
+  useBreakpointValue,
 } from '@chakra-ui/react';
 import React from 'react';
 
 const RightWatch = ({ watch }) => {
+  const size = useBreakpointValue({ base: 2, md: 3 });
   console.log(watch);
   return (
     <div>
@@ -45,9 +47,9 @@ const RightWatch = ({ watch }) => {
             </Center>
           </Box>
           <Box mt={85}>
-            <SimpleGrid columns={[2, null, 3]} spacing="40px">
+            <SimpleGrid columns={[2, 3]} spacing="40px">
               {watch &&
-                watch.response.slice(0, 3).map((watch) => (
+                watch.response.slice(0, size).map((watch) => (
                   <Box>
                     <Center mb={3} mr={5}>
                       <Img
